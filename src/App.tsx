@@ -83,8 +83,11 @@ function App() {
           <button
             key={page}
             onClick={() => setPage(page)}
-            className={`px-3 py-2 rounded border bg-gray-800 border-gray-700"
-          }`}
+            className={`px-3 py-2 rounded border ${
+              page === currentPage
+                ? "bg-orange-600 border-orange-700"
+                : "bg-gray-800 border-gray-700"
+            }`}
           >
             {page}
           </button>

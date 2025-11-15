@@ -14,37 +14,37 @@ Create a hook to manage pagination logic for a list of items.
 
 #### Inputs:
 
-- [] totalItems: The total number of items to be paginated.
-- [] itemsPerPage: The number of items to display per page (default to 10).
-- [] initialPage: The page to start on (default to 1).
+- [x] totalItems: The total number of items to be paginated.
+- [x] itemsPerPage: The number of items to display per page (default to 10).
+- [x] initialPage: The page to start on (default to 1).
 
 #### Return Values (Object):
 
-- [] currentPage: The current active page number.
-- [] totalPages: The total number of pages calculated based on totalItems and itemsPerPage.
-- [] startIndex: The starting index of items for the current page (0-based).
-- [] endIndex: The ending index of items for the current page (0-based).
-- []itemsOnCurrentPage: The actual number of items on the current page (useful for the last page).
-- [] setPage(pageNumber): A function to jump to a specific page number.
-- [] nextPage(): A function to go to the next page.
-- [] prevPage(): A function to go to the previous page.
-- [] canNextPage: Boolean indicating if there is a next page.
-- [] canPrevPage: Boolean indicating if there is a previous page.
+- [x] currentPage: The current active page number.
+- [x] totalPages: The total number of pages calculated based on totalItems and itemsPerPage.
+- [x] startIndex: The starting index of items for the current page (0-based).
+- [x] endIndex: The ending index of items for the current page (0-based).
+- [x]itemsOnCurrentPage: The actual number of items on the current page (useful for the last page).
+- [x] setPage(pageNumber): A function to jump to a specific page number.
+- [x] nextPage(): A function to go to the next page.
+- [x] prevPage(): A function to go to the previous page.
+- [x] canNextPage: Boolean indicating if there is a next page.
+- [x] canPrevPage: Boolean indicating if there is a previous page.
 
 ### Implementation Details:
 
-- [] Calculate totalPages correctly (e.g., using Math.ceil).
+- [x] Calculate totalPages correctly (e.g., using Math.ceil).
 - [] Ensure currentPage does not go below 1 or above totalPages.
-- [] startIndex and endIndex should be calculated based on the currentPage and itemsPerPage.
-- [] itemsOnCurrentPage should correctly reflect the count for the last page if it’s not full.
+- [x] startIndex and endIndex should be calculated based on the currentPage and itemsPerPage.
+- [x] itemsOnCurrentPage should correctly reflect the count for the last page if it’s not full.
 
 ### Example Usage Component (PaginationDemo.tsx):
 
-- [] Create a component that uses your usePagination hook.
-- [] Simulate a list of items (e.g., an array of 100 numbers or strings).
-- [] Display the current page number, total pages, and the slice of items for the current page.
-- [] Include buttons for “Previous”, “Next”, and jumping to specific page numbers (if you wish to demonstrate setPage more thoroughly).
-- [] Disable Previous/Next buttons when canPrevPage or canNextPage is false.
+- [x] Create a component that uses your usePagination hook.
+- [x] Simulate a list of items (e.g., an array of 100 numbers or strings).
+- [x] Display the current page number, total pages, and the slice of items for the current page.
+- [x] Include buttons for “Previous”, “Next”, and jumping to specific page numbers (if you wish to demonstrate setPage more thoroughly).
+- [x] Disable Previous/Next buttons when canPrevPage or canNextPage is false.
 
 ### useDebounce Hook
 
