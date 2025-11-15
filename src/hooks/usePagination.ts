@@ -24,6 +24,16 @@ export function usePagination(
     const canNextPage = currentPage < totalPages;
     const canPrevPage = currentPage > 1;
 
+    // move forward one page
+    const nextPage = () => {
+        setCurrentPage(currentPage + 1);
+    };
+
+    // move backward one page
+    const prevPage = () => {
+        setCurrentPage(currentPage - 1);
+    };
+
     // return all values and helpers
     return {
         currentPage,
@@ -31,5 +41,7 @@ export function usePagination(
         canNextPage,
         canPrevPage,
         setPage,
+        nextPage,
+        prevPage
     };
 }

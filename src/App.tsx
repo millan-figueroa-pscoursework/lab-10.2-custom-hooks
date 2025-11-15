@@ -5,22 +5,30 @@ function App() {
   const totalItems = 105;
 
   // call custom hook
-  const { currentPage, totalPages, canNextPage, canPrevPage, setPage } =
-    usePagination(
-      totalItems,
-      10, // items per page
-      1 // page to start on
-    );
+  const {
+    currentPage,
+    totalPages,
+    canNextPage,
+    canPrevPage,
+    setPage,
+    nextPage,
+    prevPage,
+  } = usePagination(
+    totalItems,
+    10, // items per page
+    1 // page to start on
+  );
 
   return (
     <div>
       <h1>Pagination Demo</h1>
-
       <p>Current Page: {currentPage}</p>
       <p>Total Pages: {totalPages}</p>
-
       <p>Can go to next page: {canNextPage ? "yes" : "no"}</p>
       <p>Can go to previous page: {canPrevPage ? "yes" : "no"}</p>
+      // test next and previous page
+      <button onClick={prevPage}>Prev</button>
+      <button onClick={nextPage}>Next</button>
       <button onClick={() => setPage(2)}>Go to page 2</button>
     </div>
   );
