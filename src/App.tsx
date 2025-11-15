@@ -37,19 +37,43 @@ function App() {
         Pagination Demo
       </h2>
 
+      <div className="flex justify-between mb-4">
+        <span>Items per page: 10</span>
+        <span>Total Items: {totalItems}</span>
+      </div>
+
       <ul className="space-y-1 mb-6">
         {visibleItems.map((item) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
-      <p>Current Page: {currentPage}</p>
-      <p>Total Pages: {totalPages}</p>
-      <p>Can go to next page: {canNextPage ? "yes" : "no"}</p>
-      <p>Can go to previous page: {canPrevPage ? "yes" : "no"}</p>
-      {/* test next and previous page */}
-      <button onClick={prevPage}>Prev</button>
-      <button onClick={nextPage}>Next</button>
-      <button onClick={() => setPage(2)}>Go to page 2</button>
+
+      <div className="flex justify-between items-center">
+        <button
+          onClick={prevPage}
+          disabled={!canPrevPage}
+          className="px-3 py-1 disabled:text-gray-500"
+        >
+          Previous
+        </button>
+
+        <span>
+          Page {currentPage} of {totalPages}
+        </span>
+
+        <button
+          onClick={nextPage}
+          disabled={!canNextPage}
+          className="px-3 py-1 disabled:text-gray-500"
+        >
+          Next
+        </button>
+      </div>
+
+      <p className="mt-4 text-center">
+        Showing items {startIndex + 1} - {endIndex + 1} (Total on this page:{" "}
+        {visibleItems.length})
+      </p>
     </div>
   );
 }
