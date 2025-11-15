@@ -8,11 +8,17 @@ export function usePagination(
     // keep track of the current page
     const [currentPage, setCurrentPage] = useState<number>(initialPage);
 
+    // function to jump to a specific page
+    const setPage = (pageNumber: number) => {
+        setCurrentPage(pageNumber);
+    };
+
     // calculate total pages based on total items and items per page
     const totalPages = useMemo(() => {
         if (itemsPerPage <= 0) return 0;
         return Math.ceil(totalItems / itemsPerPage);
     }, [totalItems, itemsPerPage]);
+
 
     // booleans to know if we can move forward/backward
     const canNextPage = currentPage < totalPages;
@@ -24,5 +30,6 @@ export function usePagination(
         totalPages,
         canNextPage,
         canPrevPage,
+        setPage,
     };
 }
